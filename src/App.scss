@@ -8,10 +8,25 @@
 
   .App-header {
     display: flex;
+    text-align: center;
     justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
 
     .App-logo {
-      margin: 0;
+      margin: 12px;
+      color: $light-txt-1;
+      &:hover {
+        color: $link-col;
+      }
+
+      @media (min-width: 768px) {
+        margin: 0;
+      }
     }
   }
 }
