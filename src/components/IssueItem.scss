@@ -5,19 +5,33 @@
     padding: 16px 24px;
     border-bottom: 1px solid $border-col;
 
-    .Issue-item-title {
-        font-size: 1rem;
-        font-weight: 600;
-        margin-bottom: 10px;
-        line-height: 1.5;
+    &:nth-last-child(1) {
+        border-bottom: none;
+    }
 
+    &:hover {
+        background-color: $border-col;
+    }
+
+    .Issue-item-header {
+        margin-bottom: 10px;
+
+        .Issue-item-title {
+            color: $light-txt-1;
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.5;
+            margin-right: 8px;
+        }
+    
         .Issue-item-label {
+            color: $light-txt-1;
             font-size: 0.75rem;
             display: inline-block;
             font-weight: 600;
             padding: 3px 7px 4px;
             line-height: 1.2rem;
-            margin-left: 8px;
+            margin-right: 8px;
             border-radius: 100px;
         }
     }
@@ -25,5 +39,11 @@
     .Issue-item-subtitle {
         color: $light-txt-2;
         font-size: 0.75rem;
+        a {
+            color: $light-txt-2;
+            &:hover {
+                color: $link-col;
+            }
+        }
     }
 }

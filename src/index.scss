@@ -1,7 +1,8 @@
 $dark-bcg-1: #111;
-$dark-bcg-2: #161616;
+$dark-bcg-2: #1a1a1a;
 $light-txt-1: #fff;
 $light-txt-2: #999;
+$disabled-txt: #444;
 $link-col: #61dafb;
 $border-col: #222;
 
@@ -20,7 +21,6 @@ p, h1, h2, h3 {
 
 
 a {
-  color: $light-txt-2;
   transition: all .2s;
   text-decoration: none;
   &:hover {
