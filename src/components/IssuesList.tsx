@@ -5,25 +5,37 @@ import './IssuesList.scss';
 import GLOBAL from '../global';
 
 type IssuesListState = {
-  issuesList: Array<any>
+  issuesList: Array<any>,
+  currentPage: number,
+  maxPage: number
 };
 
 class IssuesList extends React.Component<any, IssuesListState> {
   constructor(props: any) {
     super(props);
-    this.state = { issuesList: [] };
+    this.state = { 
+      issuesList: [],
+      currentPage: 1,
+      maxPage: 4
+    };
   }
 
   componentDidMount() {
-    this.getIssuesList(GLOBAL.issuesAPI);
+    this.getIssuesList(this.state.currentPage);
   }
 
-  async getIssuesList(url: string) {
-
-    const res = await axios.get(url);
-    const data: Array<any> = await res.data;
-
-    this.setState({ issuesList: data })
+  async getIssuesList(page: number) {
+    if(page > 0 && page <= this.state.maxPage) {
+      const fullUrl = `${GLOBAL.issuesAPI}?page=${page}`;
+  
+      const res = await axios.get(fullUrl);
+      const data: Array<any> = await res.data;
+  
+      this.setState({ 
+        issuesList: data,
+        currentPage: page
+      })
+    }
   }
 
   render() {
@@ -38,11 +50,20 @@ class IssuesList extends React.Component<any, IssuesListState> {
               number={issue.number}
               createdAt={issue.created_at}
               labels={issue.labels}
+              url={issue.html_url}
             />;
           })}
         </div>
         <p className="Issues-pagination">
-          <span>Previous</span> — <span>Next</span>
+          <span
+            className={this.state.currentPage === 1 ? 'disabled' : ''}
+            onClick={async () => {await this.getIssuesList(this.state.currentPage - 1);} }
+          >Previous </span>
+          —
+          <span
+            className={this.state.currentPage === this.state.maxPage ? 'disabled' : ''}
+            onClick={async () => {await this.getIssuesList(this.state.currentPage + 1);} }
+          > Next</span>
         </p>
       </div>
     );

@@ -1,0 +1,26 @@
+@import '../index.scss';
+
+.Issues-list-wrapper {
+    margin: 32px 0;
+
+    .Issues-list {
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .Issues-pagination {
+        color: $light-txt-2;
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-align: center;
+        margin-top: 32px;
+
+        span {
+            cursor: pointer;
+            &.disabled {
+                color: $disabled-txt;
+                cursor: default;
+            }
+        }
+    }
+}
