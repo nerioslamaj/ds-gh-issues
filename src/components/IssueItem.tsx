@@ -9,22 +9,32 @@ type IssueItemProp = {
   labels: Array<any>
 };
 
-class App extends React.Component< IssueItemProp > {
-  constructor(props: IssueItemProp){
-      super(props);
-      this.state = {};
+class IssueItem extends React.Component<IssueItemProp> {
+  constructor(props: IssueItemProp) {
+    super(props);
+    this.state = {};
   }
 
   render() {
     return (
-      <div className="List-item-wrapper">
-        { this.props.title }
-        { this.props.author }
-        { this.props.createdAt }
-        { this.props.title }
+      <div className="Issue-item-wrapper">
+        <h3 className="Issue-item-title">
+          {this.props.title}
+          {this.props.labels.map(function (label) {
+            return <span
+              className="Issue-item-label"
+              key={label.id}
+              style={{ backgroundColor: '#' + label.color }}
+            >{label.name}</span>;
+          })}
+        </h3>
+
+        <p className="Issue-item-subtitle">
+          <a href={"https://github.com/facebook/create-react-app/issues/" + this.props.number} target="_blank" rel="noopener noreferrer">{this.props.number}</a> opened on {this.props.createdAt} by <a href={"https://github.com/" + this.props.author} target="_blank" rel="noopener noreferrer">{this.props.author}</a>
+        </p>
       </div>
     );
   }
 }
 
-export default App;
+export default IssueItem;
