@@ -26,7 +26,7 @@ class IssuesList extends React.Component<any, IssuesListState> {
 
   async getIssuesList(page: number) {
     if(page > 0 && page <= this.state.maxPage) {
-      const fullUrl = `${GLOBAL.issuesAPI}?page=${page}`;
+      const fullUrl: string = `${GLOBAL.issuesAPI}?page=${page}`;
   
       const res = await axios.get(fullUrl);
       const data: Array<any> = await res.data;
@@ -54,7 +54,7 @@ class IssuesList extends React.Component<any, IssuesListState> {
             />;
           })}
         </div>
-        <p className="Issues-pagination">
+        <p className={this.state.issuesList.length ? 'Issues-pagination' : 'Issues-pagination disabled'}>
           <span
             className={this.state.currentPage === 1 ? 'disabled' : ''}
             onClick={async () => {await this.getIssuesList(this.state.currentPage - 1);} }
