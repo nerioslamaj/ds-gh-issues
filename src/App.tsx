@@ -11,11 +11,7 @@ class App extends React.Component {
         <header className="App-header">
           <h2 className="App-logo">ds-gh-issues</h2>
 
-          <div className="App-pagination">
-            <span>Previous</span>
-            <span> — </span>
-            <span>Next</span>
-          </div>
+          <p className="App-intro">A simple app that pulls the latest issues from Create React App repo</p>
         </header>
 
         <section className="App-list">

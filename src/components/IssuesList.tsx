@@ -28,17 +28,22 @@ class IssuesList extends React.Component<any, IssuesListState> {
 
   render() {
     return (
-      <div>
-        {this.state.issuesList.map(function (issue) {
-          return <IssueItem
-            key={issue.number}
-            title={issue.title}
-            author={issue.user.login}
-            number={issue.number}
-            createdAt={issue.created_at}
-            labels={issue.labels}
-          />;
-        })}
+      <div className="Issues-list-wrapper">
+        <div className="Issues-list">
+          {this.state.issuesList.map(function (issue) {
+            return <IssueItem
+              key={issue.number}
+              title={issue.title}
+              author={issue.user.login}
+              number={issue.number}
+              createdAt={issue.created_at}
+              labels={issue.labels}
+            />;
+          })}
+        </div>
+        <p className="Issues-pagination">
+          <span>Previous</span> — <span>Next</span>
+        </p>
       </div>
     );
   }
