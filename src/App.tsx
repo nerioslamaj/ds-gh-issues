@@ -15,12 +15,12 @@ class App extends React.Component< any, AppState > {
   }
 
   componentDidMount() {
-    this.getData();
+    this.getIssuesList(GLOBAL.issuesAPI);
   }
 
-  async getData() {
+  async getIssuesList(url: string) {
 
-    const res = await axios.get(GLOBAL.issuesAPI);
+    const res = await axios.get(url);
     const data : Array<Object> = await res.data;
 
     this.setState({ issuesList: data })
