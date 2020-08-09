@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="Issues-list-wrapper"
+>
+  <div
+    className="Issues-list"
+  />
+  <p
+    className="Issues-pagination disabled"
+  >
+    <span
+      className="disabled"
+      onClick={[Function]}
+    >
+      Previous 
+    </span>
+    —
+    <span
+      className=""
+      onClick={[Function]}
+    >
+       Next
+    </span>
+  </p>
+</div>
+`;

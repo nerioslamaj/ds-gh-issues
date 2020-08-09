@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="Issue-item-wrapper"
+>
+  <h3
+    className="Issue-item-header"
+  >
+    <a
+      className="Issue-item-title"
+      href="https://example.url"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Item Title
+    </a>
+    <a
+      className="Issue-item-label"
+      style={
+        Object {
+          "backgroundColor": "#undefined",
+        }
+      }
+    />
+    <a
+      className="Issue-item-label"
+      style={
+        Object {
+          "backgroundColor": "#undefined",
+        }
+      }
+    />
+  </h3>
+  <p
+    className="Issue-item-subtitle"
+  >
+    <a
+      href="https://github.com/facebook/create-react-app/issues/1"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      #
+      1
+    </a>
+     opened on 
+    09.08.2020
+     by 
+    <a
+      href="https://github.com/NeriosLamaj"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      NeriosLamaj
+    </a>
+  </p>
+</div>
+`;
