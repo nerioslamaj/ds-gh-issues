@@ -6,6 +6,11 @@
   min-height: 100vh;
   color: $light-txt-1;
 
+  .App-container {
+    max-width: 1170px;
+    margin: auto;
+  }
+
   .App-header {
     display: flex;
     text-align: center;
