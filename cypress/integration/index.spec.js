@@ -9,7 +9,7 @@ context('Actions', () => {
 
   it('Check if elements exist', () => {
     // https://on.cypress.io/type
-    cy.contains('code', 'src/App.tsx')
-    cy.contains('a', 'Learn React')
+    cy.contains('h1', 'ds-gh-issues')
+    cy.contains('.App-intro', 'A simple app that pulls the latest issues from Create React App repo')
   })
 })
