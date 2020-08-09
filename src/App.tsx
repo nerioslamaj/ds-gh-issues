@@ -28,24 +28,21 @@ class App extends React.Component< any, AppState > {
 
   render() {
     return (
-      <div className="App">
+      <div className="App-wrapper">
+
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p></p>
-          <p>
-            <code>
-              {JSON.stringify(this.state.issuesList)}
-            </code>
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <h2 className="App-logo">ds-gh-issues</h2>
+
+          <div className="App-pagination">
+            <span>Previous</span>
+            <span> — </span>
+            <span>Next</span>
+          </div>
         </header>
+
+        <section className="App-list">
+          
+        </section>
       </div>
     );
   }
