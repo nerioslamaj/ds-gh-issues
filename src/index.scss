@@ -1,8 +1,9 @@
 $dark-bcg-1: #111;
 $dark-bcg-2: #161616;
 $light-txt-1: #fff;
-$light-txt-2: #ccc;
+$light-txt-2: #999;
 $link-col: #61dafb;
+$border-col: #222;
 
 body {
   margin: 0;
@@ -11,4 +12,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+p, h1, h2, h3 {
+  margin: 0;
+}
+
+
+a {
+  color: $light-txt-2;
+  transition: all .2s;
+  text-decoration: none;
+  &:hover {
+      color: $link-col;
+      transition: all .2s;
+  }
 }
