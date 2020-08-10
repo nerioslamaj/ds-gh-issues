@@ -56,12 +56,12 @@ class IssuesList extends React.Component<any, IssuesListState> {
         </div>
         <p className={this.state.issuesList.length ? 'Issues-pagination' : 'Issues-pagination disabled'}>
           <span
-            className={this.state.currentPage === 1 ? 'disabled' : ''}
+            className={this.state.currentPage === 1 ? 'disabled Btn-previous' : 'Btn-previous'}
             onClick={async () => {await this.getIssuesList(this.state.currentPage - 1);} }
           >Previous </span>
           —
           <span
-            className={this.state.currentPage === this.state.maxPage ? 'disabled' : ''}
+            className={this.state.currentPage === this.state.maxPage ? 'disabled Btn-next' : 'Btn-next'}
             onClick={async () => {await this.getIssuesList(this.state.currentPage + 1);} }
           > Next</span>
         </p>

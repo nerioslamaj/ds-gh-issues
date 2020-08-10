@@ -21,6 +21,6 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npx cypress open`
+### `npx cypress run`
 
 After running `npm start`, this command will run all the E2E tests in the project.
